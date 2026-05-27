@@ -65,7 +65,12 @@ object PatchScanner {
 
 private fun getDeviceSoc(): String {
     return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-        Build.SOC_MODEL
+        val socModel = Build.SOC_MODEL
+        if (socModel == "xxxx") {
+            "SM8850"
+        } else {
+            socModel
+        }
     } else {
         "CPU"
     }

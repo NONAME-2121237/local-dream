@@ -93,6 +93,7 @@ val chipsetModelSuffixes = mapOf(
     "SM8850P" to "8gen2",
     "SM8735" to "8gen2",
     "SM8845" to "8gen2",
+    "xxxx" to "8gen2",
 )
 
 sealed class DownloadResult {
@@ -434,7 +435,7 @@ class ModelRepository(private val context: Context) {
     }
 
     private fun isSdxlCapableSoc(soc: String): Boolean {
-        return soc in setOf("SM8750", "SM8750P", "SM8850", "SM8850P", "SM8845", "SM8650")
+        return soc in setOf("SM8750", "SM8750P", "SM8850", "SM8850P", "SM8845", "SM8650", "xxxx")
     }
 
     private fun createSDXLBaseModel(): Model {
